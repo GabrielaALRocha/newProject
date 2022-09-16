@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <div class="body">
+        <img src="../../../assets/img/password.png" alt="login" class="logo">
+        <h1>Cadastrar</h1>
+        <form (ngSubmit)="cadastrar()" [formGroup]="registrar">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
+                <label >Seu Email</label>
+                <span *ngIf="registrar.get('email')?.hasError('required') && registrar.get('email')?.touched" class="text-danger errorLabel">
+                    O <strong>email</strong> é obrigatório!
+                </span>
+                <span *ngIf="registrar.get('email')?.hasError('email') && registrar.get('email')?.touched" class="text-danger errorLabel">
+                    O <strong>formato</strong> é inválido!
+                </span>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" formControlName="senha" placeholder="Senha">
+                <label >Senha</label>
+                <span *ngIf="registrar.get('senha')?.hasError('required') && registrar.get('senha')?.touched" class="text-danger errorLabel">
+                    A <strong>senha</strong> é obrigatória!
+                </span>
+                <span *ngIf="registrar.get('senha')?.hasError('minlength') && registrar.get('senha')?.touched" class="text-danger errorLabel">
+                    A <strong>senha</strong> deve ter no minino 6 caracteres!
+                </span>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" formControlName="repetirSenha" placeholder="Repetir Senha">
+                <label >Repetir a Senha</label>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary btn-lg"[disabled]="registrar.invalid" type="submit">Cadastrar</button>
+              </div>
+              <div class="mt-3"><a routerLink="/login">Voltar</a></div>
+        </form>
+
+    </div>
+
+</div>

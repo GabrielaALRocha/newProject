@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+background-color: gainsboro;
+height: 100%;
+
+}
+.form-floating {
+    text-align: start;
+}
+
+.errorLabel{
+    margin-left: 5px;
+}
+
+.logo{
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.body{
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
